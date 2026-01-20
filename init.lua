@@ -245,6 +245,12 @@ require('lazy').setup {
     end,
   },
 
+  {
+    -- GitHub Copilot
+    'github/copilot.vim',
+    event = 'InsertEnter',
+  },
+
   -- LSP Plugins
 
   {
