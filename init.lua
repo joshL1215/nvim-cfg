@@ -10,6 +10,16 @@ vim.cmd [[
   hi VertSplit guibg=NONE ctermbg=NONE
 ]]
 
+-- so that i can see claude updates in real time
+vim.opt.autoread = true
+
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+
+  pattern = '*',
+
+  command = 'checktime',
+})
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
