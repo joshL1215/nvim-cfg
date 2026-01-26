@@ -138,6 +138,16 @@ rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
+
+  {
+    dir = '/home/josh/p/personal/claude-helper-nvim',
+    config = function()
+      require('claude-helper').setup()
+    end,
+  },
+
+  { import = 'custom.plugins' },
+
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 
   -- NOTE: Plugins can also be added by using a table,
@@ -160,6 +170,18 @@ require('lazy').setup {
   --        end,
   --    }
   --
+
+  {
+    'olimorris/codecompanion.nvim',
+    version = '^18.0.0',
+
+    opts = {},
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+
+      'nvim-treesitter/nvim-treesitter',
+    },
+  },
 
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`.
@@ -253,12 +275,6 @@ require('lazy').setup {
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
     end,
-  },
-
-  {
-    -- GitHub Copilot
-    'github/copilot.vim',
-    event = 'InsertEnter',
   },
 
   -- LSP Plugins
@@ -629,8 +645,8 @@ require('lazy').setup {
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
 
-        ['<Tab>'] = { 'select_and_accept', 'fallback' },
-        ['<Esc>'] = { 'hide', 'fallback' },
+        ['<S-Tab>'] = { 'select_and_accept', 'fallback' },
+        ['<S-Esc>'] = { 'hide', 'fallback' },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
