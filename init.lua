@@ -735,3 +735,13 @@ require('lazy').setup {
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 }
+
+vim.diagnostic.config {
+  virtual_text = false,
+  underline = false,
+
+  float = {
+    source = true,
+  },
+}
+vim.keymap.set('n', '<S-s>', vim.diagnostic.open_float)
