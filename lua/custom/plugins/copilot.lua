@@ -8,7 +8,7 @@ return {
           enabled = true,
           auto_trigger = true,
           keymap = {
-            accept = '<Tab>',
+            accept = '<C-tab>',
             next = '<M-]>',
             prev = '<M-[>',
             dismiss = '<C-]>',
