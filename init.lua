@@ -44,10 +44,11 @@ vim.schedule(function()
 end)
 
 vim.o.autoindent = true
-vim.o.smartindent = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+
+vim.opt.smartindent = false
+vim.opt.cindent = false
+vim.opt.autoindent = true
 
 vim.o.breakindent = true
 vim.o.undofile = true
